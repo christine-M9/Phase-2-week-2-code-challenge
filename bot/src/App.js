@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import './App.css'
+import './App.css';
 import BotCollection from './BotCollection';
 import BotArmy from './BotArmy';
 
@@ -11,12 +12,15 @@ function App() {
       setOnlistedBots([...onlistedBots, bot]);
     }
   };
-  
+
+  const releaseBot = (botId) => {
+    setOnlistedBots(onlistedBots.filter((bot) => bot.id !== botId));
+  };
 
   return (
     <div className="App">
-      <h1>BOT PROFILES</h1>
-      <BotArmy onlistedBots={onlistedBots} />
+      <h1>BOTS PROFILE</h1>
+      <BotArmy onlistedBots={onlistedBots} releaseBot={releaseBot} />
       <BotCollection onlistBot={onlistBot} />
     </div>
   );

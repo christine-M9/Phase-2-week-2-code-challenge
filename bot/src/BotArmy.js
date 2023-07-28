@@ -1,12 +1,15 @@
+import React from 'react';
 
-import React from 'react'
+const BotArmy = ({ onlistedBots, releaseBot }) => {
+  const handleRelease = (botId) => {
+    releaseBot(botId);
+  };
 
-const BotArmy = ({ onlistedBots }) => {
   return (
     <div>
       <h2>BOT ARMY</h2>
       {onlistedBots.map((bot) => (
-        <div key={bot.id}>
+        <div key={bot.id} onClick={() => handleRelease(bot.id)}>
           <h3>{bot.name}</h3>
           <p>Description: {bot.bot_class}</p>
           <p>Health: {bot.health}</p>
