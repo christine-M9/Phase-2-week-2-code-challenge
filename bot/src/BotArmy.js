@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
 
-const BotCollection = ({ onlistBot }) => {
-  const [bots, setBots] = useState([]);
+import React from 'react'
 
-  // fetching data from db.json
-  useEffect(() => {
-    fetch('/db.json')
-      .then((response) => response.json())
-      .then((data) => setBots(data.bots));
-  }, []);
-
-// itterating through
+const BotArmy = ({ onlistedBots }) => {
   return (
     <div>
-      {bots.map((bot) => (
-        <div key={bot.id} onClick={() => onlistBot(bot)}>
-          <h2>{bot.name}</h2>
+      <h2>BOT ARMY</h2>
+      {onlistedBots.map((bot) => (
+        <div key={bot.id}>
+          <h3>{bot.name}</h3>
           <p>Description: {bot.bot_class}</p>
           <p>Health: {bot.health}</p>
           <p>Damage: {bot.damage}</p>
@@ -30,4 +22,4 @@ const BotCollection = ({ onlistBot }) => {
   );
 };
 
-export default BotCollection;
+export default BotArmy;
