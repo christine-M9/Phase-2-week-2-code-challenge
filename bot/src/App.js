@@ -1,6 +1,4 @@
-
 import React, { useState } from 'react';
-import './App.css';
 import BotCollection from './BotCollection';
 import BotArmy from './BotArmy';
 
@@ -18,7 +16,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div style={{ textAlign: 'center', padding: '20px' }}>
       <h1>BOTS PROFILE</h1>
       <BotArmy onlistedBots={onlistedBots} releaseBot={releaseBot} />
       <BotCollection onlistBot={onlistBot} />
