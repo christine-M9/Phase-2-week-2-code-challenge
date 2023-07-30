@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const BotCollection = ({ onlistBot }) => {
+  
   const [bots, setBots] = useState([]);
 
   // fetching data from db.json
